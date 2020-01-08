@@ -42,15 +42,7 @@ export default function invoice() {
     ];
 
     const listInvoice = (invoices) => {
-      const list = element => (<div className="col-sm-12 col-md-12 col-lg-6" key={element.period_id}>
-          <Portlet className="kt-portlet--border-bottom-brand">
-            <PortletBody fluid={true}>
-              <InvoiceCard {...element}/>
-            </PortletBody>
-          </Portlet>
-      </div>);
-      invoices = invoices.map(list);
-      return invoices;
+      return invoices.map(element => <InvoiceCard {...element}/>);
     }
     return (
         <>

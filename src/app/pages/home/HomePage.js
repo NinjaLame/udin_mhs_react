@@ -5,7 +5,11 @@ import Dashboard from "./Dashboard";
 import DocsPage from "./docs/DocsPage";
 import { LayoutSplashScreen } from "../../../_metronic";
 import MyPage from "./MyPage";
-import Invoice from "./Invoice"
+import Invoice from "./Invoice";
+
+const Academic = lazy(() =>
+  import("./academic/Academic")
+);
 
 const GoogleMaterialPage = lazy(() =>
   import("./google-material/GoogleMaterialPage")
@@ -29,6 +33,7 @@ export default function HomePage() {
         <Route path="/docs" component={DocsPage} />
         <Route path="/my-page" component={MyPage} />
         <Route path="/invoice" component={Invoice} />
+        <Route path="/academic" component={Academic} />
         <Redirect to="/error/error-v1" />
       </Switch>
     </Suspense>

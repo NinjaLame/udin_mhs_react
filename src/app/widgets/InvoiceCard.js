@@ -2,12 +2,17 @@ import React from "react";
 import { Button, Modal } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import InvoiceInfo from "./InvoiceInfo";
+import {
+  Portlet,
+  PortletBody,
+} from "../partials/content/Portlet";
+
 const toCurrency = (num) => {
   try {
-    let currency = 'Rp. '+ num.toLocaleString('id-ID')
+    let currency = 'Rp. ' + num.toLocaleString('id-ID')
     return currency;
   } catch (error) {
-    console.log(num+'----' + error)
+    console.log(num + '----' + error)
     return 'Rp. -'
   }
 }
@@ -55,7 +60,7 @@ export default function InvoiceCard(invoice) {
   // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = React.useState(getModalStyle);
 
-  
+
   const handleOpen = () => {
     setOpen(true);
   };
@@ -64,57 +69,60 @@ export default function InvoiceCard(invoice) {
     setOpen(false);
   };
 
-    console.log(invoice.total)
-  
-
   return (
-    <div className="kt-widget26">
-      <div className="kt-widget26__content">
-        <span className="kt-widget26__number" >{period_id[1]}</span>
-        {status}
-      </div>
+    <div className="col-sm-12 col-md-12 col-lg-6" key={period_id}>
+      <Portlet className="kt-portlet--border-bottom-brand">
+        <PortletBody fluid={true}>
+          <div className="kt-widget26">
+            <div className="kt-widget26__content">
+              <span className="kt-widget26__number" >{period_id[1]}</span>
+              {status}
+            </div>
 
-      <Button onClick={handleOpen}>Detail</Button>
-      <Modal
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
-        open={open}
-        onClose={handleClose}
-      >
-        <div style={modalStyle} className={classes.paper}>
-          <InvoiceInfo invoice={invoice}/>
-        </div>
-      </Modal>
+            <Button onClick={handleOpen}>Detail</Button>
+            <Modal
+              aria-labelledby="simple-modal-title"
+              aria-describedby="simple-modal-description"
+              open={open}
+              onClose={handleClose}
+            >
+              <div style={modalStyle} className={classes.paper}>
+                <InvoiceInfo invoice={invoice} />
+              </div>
+            </Modal>
 
-      <div
-        className="kt-widget26__item text-justify"
-        style={{  textAlign: "justify", height: "100px" }}
-      >
-        <div className='row'>
-          <div className='col-6'>
-            Total Kewajiban
+            <div
+              className="kt-widget26__item text-justify"
+              style={{ textAlign: "justify", height: "100px" }}
+            >
+              <div className='row'>
+                <div className='col-6'>
+                  Total Kewajiban
+                </div>
+                <div className='col-6 text-right'>
+                  {toCurrency(total)}
+                </div>
+              </div>
+              <div className='row'>
+                <div className='col-6'>
+                  Total Kekurangan
+                </div>
+                <div className='col-6 text-right'>
+                  {toCurrency(prev_total)}
+                </div>
+              </div>
+              <div className='row'>
+                <div className='col-6'>
+                  Total Tagihan
+                </div>
+                <div className='col-6 text-right'>
+                  {toCurrency(total + prev_total)}
+                </div>
+              </div>
+            </div>
           </div>
-          <div className='col-6 text-right'>
-            {toCurrency(total)}
-          </div>
-        </div>
-        <div className='row'>
-          <div className='col-6'>
-            Total Kekurangan
-          </div>
-          <div className='col-6 text-right'>
-            {toCurrency(prev_total)}
-          </div>
-        </div>
-        <div className='row'>
-          <div className='col-6'>
-            Total Tagihan
-          </div>
-          <div className='col-6 text-right'>
-            {toCurrency(total+prev_total)}
-          </div>
-        </div>
-      </div>
+        </PortletBody>
+      </Portlet>
     </div>
   );
 }

@@ -6,22 +6,44 @@ export default {
         title: "Dashboards",
         root: true,
         alignment: "left",
+        icon: "flaticon-browser",
         page: "dashboard",
         translate: "MENU.DASHBOARD"
       },
       {
-        title: "My Page",
+        title: "Academic",
         root: true,
-        desc: 'Some my description goes here',
-        page: 'my-page',
-        icon: 'flaticon-line-graph'
+        alignment: "left",
+        toggle: "click",
+        page: "academic",
+        icon: "flaticon-presentation",
+        submenu: [
+          {
+            title: "Study Plan",
+            root: true,
+            desc: 'KRS Mahasiswa',
+            page: 'academic/studyplan',
+          },
+          {
+            title: "Study Result",
+            root: true,
+            desc: 'KHS Mahasiswa',
+            page: 'academic/studyresult',
+          },
+          {
+            title: "Transkrip",
+            root: true,
+            desc: 'Transkrip Nilai',
+            page: 'academic/transkrip',
+          }
+        ]
       },
       {
         title: "Invoice",
         root: true,
         desc: 'Tagihan Pembayaran Kuliah',
         page: 'invoice',
-        icon: 'flaticon-line-graph'
+        icon: 'flaticon-price-tag'
       },
       {
         title: "Material UI",
