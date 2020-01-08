@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://keenthemes.com/metronic/preview/react/demo4",
   "scripts": {
-    "serve": "cp-cli build _site/metronic/preview/react && serve",
+    "serve": "cp-cli build ./ && serve",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

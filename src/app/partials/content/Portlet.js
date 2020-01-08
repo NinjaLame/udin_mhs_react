@@ -98,7 +98,7 @@ export const PortletHeader = forwardRef(
             className={clsx("kt-portlet__head-label", className)}
           >
             {icon}
-
+            
             {/* Wrap string and fragments in PortletHeaderTitle */
             typeof title === "string" || isFragment(title) ? (
               <PortletHeaderTitle>{title}</PortletHeaderTitle>

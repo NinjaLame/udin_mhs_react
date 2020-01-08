@@ -3,6 +3,13 @@ export default {
     self: {},
     items: [
       {
+        title: "Dashboards",
+        root: true,
+        alignment: "left",
+        page: "dashboard",
+        translate: "MENU.DASHBOARD"
+      },
+      {
         title: "My Page",
         root: true,
         desc: 'Some my description goes here',
@@ -10,11 +17,11 @@ export default {
         icon: 'flaticon-line-graph'
       },
       {
-        title: "Dashboards",
+        title: "Invoice",
         root: true,
-        alignment: "left",
-        page: "dashboard",
-        translate: "MENU.DASHBOARD"
+        desc: 'Tagihan Pembayaran Kuliah',
+        page: 'invoice',
+        icon: 'flaticon-line-graph'
       },
       {
         title: "Material UI",

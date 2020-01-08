@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "http://odemo.dinus.org/static/css/main.cc8596cd.chunk.css",
+    "main.js": "http://odemo.dinus.org/static/js/main.ba5ca7a3.chunk.js",
+    "main.js.map": "http://odemo.dinus.org/static/js/main.ba5ca7a3.chunk.js.map",
+    "runtime-main.js": "http://odemo.dinus.org/static/js/runtime-main.3cf2b16d.js",
+    "runtime-main.js.map": "http://odemo.dinus.org/static/js/runtime-main.3cf2b16d.js.map",
+    "static/css/2.af90b0b3.chunk.css": "http://odemo.dinus.org/static/css/2.af90b0b3.chunk.css",
+    "static/js/2.d4c65805.chunk.js": "http://odemo.dinus.org/static/js/2.d4c65805.chunk.js",
+    "static/js/2.d4c65805.chunk.js.map": "http://odemo.dinus.org/static/js/2.d4c65805.chunk.js.map",
+    "static/js/3.d3110c90.chunk.js": "http://odemo.dinus.org/static/js/3.d3110c90.chunk.js",
+    "static/js/3.d3110c90.chunk.js.map": "http://odemo.dinus.org/static/js/3.d3110c90.chunk.js.map",
+    "static/js/4.b5bcb314.chunk.js": "http://odemo.dinus.org/static/js/4.b5bcb314.chunk.js",
+    "static/js/4.b5bcb314.chunk.js.map": "http://odemo.dinus.org/static/js/4.b5bcb314.chunk.js.map",
+    "static/js/5.f35bddfe.chunk.js": "http://odemo.dinus.org/static/js/5.f35bddfe.chunk.js",
+    "static/js/5.f35bddfe.chunk.js.map": "http://odemo.dinus.org/static/js/5.f35bddfe.chunk.js.map",
+    "static/js/6.578af093.chunk.js": "http://odemo.dinus.org/static/js/6.578af093.chunk.js",
+    "static/js/6.578af093.chunk.js.map": "http://odemo.dinus.org/static/js/6.578af093.chunk.js.map",
+    "index.html": "http://odemo.dinus.org/index.html",
+    "precache-manifest.20de8116a42a4429c18b02b12bdaac76.js": "http://odemo.dinus.org/precache-manifest.20de8116a42a4429c18b02b12bdaac76.js",
+    "service-worker.js": "http://odemo.dinus.org/service-worker.js",
+    "static/css/2.af90b0b3.chunk.css.map": "http://odemo.dinus.org/static/css/2.af90b0b3.chunk.css.map",
+    "static/css/main.cc8596cd.chunk.css.map": "http://odemo.dinus.org/static/css/main.cc8596cd.chunk.css.map",
+    "static/media/flaticon.css": "http://odemo.dinus.org/static/media/Flaticon2.eafcbac0.ttf",
+    "static/media/all.min.css": "http://odemo.dinus.org/static/media/fa-solid-900.f6121be5.woff2",
+    "static/media/line-awesome.css": "http://odemo.dinus.org/static/media/line-awesome.8b129059.woff",
+    "static/media/socicon.css": "http://odemo.dinus.org/static/media/socicon.a35b6574.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3cf2b16d.js",
+    "static/css/2.af90b0b3.chunk.css",
+    "static/js/2.d4c65805.chunk.js",
+    "static/css/main.cc8596cd.chunk.css",
+    "static/js/main.ba5ca7a3.chunk.js"
+  ]
+}

@@ -26,7 +26,7 @@ class Footer extends React.Component {
           <div className="kt-footer__top">
             <div className={`kt-container ${footerContainerClasses}`}>
               <div className="row">
-                <div className="col-lg-4">
+                {/* <div className="col-lg-4">
                   <div className="kt-footer__section">
                     <h3 className="kt-footer__title">About</h3>
                     <div className="kt-footer__content">
@@ -35,8 +35,8 @@ class Footer extends React.Component {
                       have points in that are worth from a point of view.
                     </div>
                   </div>
-                </div>
-                <div className="col-lg-4">
+                </div> */}
+                {/* <div className="col-lg-12">
                   <div className="kt-footer__section">
                     <h3 className="kt-footer__title">Quick Links</h3>
                     <div className="kt-footer__content">
@@ -54,8 +54,8 @@ class Footer extends React.Component {
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="col-lg-4">
+                </div> */}
+                {/* <div className="col-lg-4">
                   <div className="kt-footer__section">
                     <h3 className="kt-footer__title">Get In Touch</h3>
                     <div className="kt-footer__content">
@@ -75,7 +75,7 @@ class Footer extends React.Component {
                       </form>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
