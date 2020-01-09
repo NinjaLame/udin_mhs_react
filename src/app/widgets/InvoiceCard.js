@@ -32,12 +32,17 @@ function getModalStyle() {
 const useStyles = makeStyles(theme => ({
   paper: {
     position: "absolute",
-    width: '60%',
+    width: '90%',
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing(4),
     outline: "none"
-  }
+  },
+  root: {
+    width: '100%',
+    marginTop: theme.spacing(3),
+    overflowX: 'auto',
+  },
 }));
 
 export default function InvoiceCard(invoice) {
@@ -87,7 +92,7 @@ export default function InvoiceCard(invoice) {
               onClose={handleClose}
             >
               <div style={modalStyle} className={classes.paper}>
-                <InvoiceInfo invoice={invoice} />
+                <InvoiceInfo invoice={invoice} rootcls={classes.root} />
               </div>
             </Modal>
 

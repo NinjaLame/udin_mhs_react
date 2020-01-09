@@ -4,7 +4,7 @@ import {
   PortletBody,
   PortletHeader,
 } from "../../partials/content/Portlet";
-import InvoiceCurrent from "../../widgets/InvoiceInfo";
+import InvoiceInfo from "../../widgets/InvoiceInfo";
 import InvoiceCard from "../../widgets/InvoiceCard";
 import Notice from "../../partials/content/Notice";
 
@@ -55,7 +55,7 @@ export default function invoice() {
               title=" Tagihan"
             />
             <PortletBody>
-              <InvoiceCurrent invoice={cur_invoice}/>
+              <InvoiceInfo invoice={cur_invoice}/>
             </PortletBody>
           </Portlet>
         </div>

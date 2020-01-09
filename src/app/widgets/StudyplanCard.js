@@ -21,12 +21,12 @@ function getModalStyle() {
 const useStyles = makeStyles(theme => ({
   paper: {
     position: "absolute",
-    width: '60%',
+    width: '90%',
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing(4),
     outline: "none"
-  }
+  },
 }));
 
 export default function StudyplanCard(studyplan) {
@@ -59,9 +59,10 @@ export default function StudyplanCard(studyplan) {
               aria-describedby="simple-modal-description"
               open={open}
               onClose={handleClose}
+              
             >
               <div style={modalStyle} className={classes.paper}>
-                <StudyplanInfo id={studyplan.id}/>
+                <StudyplanInfo id={studyplan.id} />
               </div>
             </Modal>
 

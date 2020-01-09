@@ -6,9 +6,22 @@ import {
   TableCell,
   TableBody,
 } from "@material-ui/core";
+import { makeStyles } from '@material-ui/core/styles';
+// import Paper from '@material-ui/core/Paper';
 
+const useStyles = makeStyles(theme => ({
+  root: {
+    width: '100%',
+    marginTop: theme.spacing(3),
+    overflowX: 'auto',
+  },
+  table: {
+    minWidth: 650,
+  },
+}));
 
 export default function StudyplanInfo(studyplan) {
+    const classes = useStyles();
     studyplan = [
         {
             "credit": 2,
@@ -65,28 +78,30 @@ export default function StudyplanInfo(studyplan) {
                 <TableCell>{matakuliah}</TableCell>
                 <TableCell>{credit}</TableCell>
                 <TableCell>{kode_mk}</TableCell>
-                <TableCell>{lecturer}</TableCell>
+                <TableCell  style={{ maxWidth: 140 }}>{lecturer}</TableCell>
                 <TableCell>{presence_count}</TableCell>
                 <TableCell>{presence_percentage}</TableCell>
             </TableRow>
         );
     })
     return (
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell><b>Mata Kuliah</b></TableCell>
-            <TableCell><b>SKS</b></TableCell>
-            <TableCell><b>Kode Makul</b></TableCell>
-            <TableCell><b>Dosen Pengajar</b></TableCell>
-            <TableCell><b>Jumlah Hadir</b></TableCell>
-            <TableCell><b>Presentase Kehadiran</b></TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {list_studyplan}
-        </TableBody>
-      </Table>
+      <div className={classes.root}>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell><b>Mata Kuliah</b></TableCell>
+              <TableCell><b>SKS</b></TableCell>
+              <TableCell><b>Kode Makul</b></TableCell>
+              <TableCell><b>Dosen Pengajar</b></TableCell>
+              <TableCell><b>Jumlah Hadir</b></TableCell>
+              <TableCell><b>Presentase Kehadiran</b></TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {list_studyplan}
+          </TableBody>
+        </Table>
+      </div>
     )
   };
   
