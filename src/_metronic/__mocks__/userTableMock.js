@@ -78,5 +78,31 @@ export default [
       twitter: "https://twitter.com/guest",
       instagram: "https://instagram.com/guest"
     }
-  }
+  },
+  {
+    id: 1,
+    username: "admin",
+    password: "demo",
+    email: "admin@demo.com",
+    accessToken: "access_token_8354aa49e7228445535ef793435ca6d412bc801d",
+    refreshToken: "access_token_8354aa49e7228445535ef793435ca6d412bc801d",
+    roles: [1], // Administrator
+    pic: toAbsoluteUrl("/media/users/300_25.jpg"),
+    fullname: "Sean",
+    occupation: "CEO",
+    companyName: "Keenthemes",
+    phone: "456669067890",
+    address: {
+      addressLine: "L-12-20 Vertex, Cybersquare",
+      city: "San Francisco",
+      state: "California",
+      postCode: "45000"
+    },
+    socialNetworks: {
+      linkedIn: "https://linkedin.com/admin",
+      facebook: "https://facebook.com/admin",
+      twitter: "https://twitter.com/admin",
+      instagram: "https://instagram.com/admin"
+    }
+  },
 ];

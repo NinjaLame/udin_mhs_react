@@ -6,6 +6,7 @@ import DocsPage from "./docs/DocsPage";
 import { LayoutSplashScreen } from "../../../_metronic";
 import MyPage from "./MyPage";
 import Invoice from "./Invoice";
+import Supervising from "./Supervising";
 
 const Academic = lazy(() =>
   import("./academic/Academic")
@@ -34,6 +35,7 @@ export default function HomePage() {
         <Route path="/my-page" component={MyPage} />
         <Route path="/invoice" component={Invoice} />
         <Route path="/academic" component={Academic} />
+        <Route path="/supervising" component={Supervising} />
         <Redirect to="/error/error-v1" />
       </Switch>
     </Suspense>

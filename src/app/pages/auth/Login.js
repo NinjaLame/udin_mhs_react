@@ -25,6 +25,28 @@ function Login(props) {
     setLoadingButtonStyle({ paddingRight: "2.5rem" });
   };
 
+  const authLogin = (values, { setStatus, setSubmitting }) => {
+    enableLoading();
+    setTimeout(() => {
+      login(values.email, values.password)
+        .then((data) => {
+          disableLoading();
+            props.login(data.access_token || data.data.accessToken );
+            console.log(data.access_token || data.data.accessToken);
+            
+        })
+        .catch(() => {
+          disableLoading();
+          setSubmitting(false);
+          setStatus(
+            intl.formatMessage({
+              id: "AUTH.VALIDATION.INVALID_LOGIN"
+            })
+          );
+        });
+    }, 1000);
+  }
+
   return (
     <>
       <div className="kt-login__head">
@@ -75,25 +97,7 @@ function Login(props) {
 
               return errors;
             }}
-            onSubmit={(values, { setStatus, setSubmitting }) => {
-              enableLoading();
-              setTimeout(() => {
-                login(values.email, values.password)
-                  .then(({ data: { accessToken } }) => {
-                    disableLoading();
-                    props.login(accessToken);
-                  })
-                  .catch(() => {
-                    disableLoading();
-                    setSubmitting(false);
-                    setStatus(
-                      intl.formatMessage({
-                        id: "AUTH.VALIDATION.INVALID_LOGIN"
-                      })
-                    );
-                  });
-              }, 1000);
-            }}
+            onSubmit={authLogin}
           >
             {({
               values,

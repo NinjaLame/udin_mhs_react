@@ -3,12 +3,171 @@ export default {
     self: {},
     items: [
       {
+        title: "Bootstrap",
+        root: true,
+        alignment: "left",
+        toggle: "click",
+        page: "react-bootstrap",
+        submenu: {
+          type: "mega",
+          width: "800px",
+          alignment: "left",
+          columns: [
+            {
+              items: [
+                {
+                  title: "Alerts",
+                  page: "react-bootstrap/alert"
+                },
+                {
+                  title: "Accordion",
+                  page: "react-bootstrap/accordion"
+                },
+                {
+                  title: "Badge",
+                  page: "react-bootstrap/badge"
+                },
+                {
+                  title: "Breadcrumb",
+                  page: "react-bootstrap/breadcrumb"
+                },
+                {
+                  title: "Buttons",
+                  page: "react-bootstrap/buttons"
+                },
+                {
+                  title: "Button Group",
+                  page: "react-bootstrap/button-group"
+                },
+                {
+                  title: "Cards",
+                  page: "react-bootstrap/cards"
+                }
+              ]
+            },
+            {
+              items: [
+                {
+                  title: "Carousel",
+                  page: "react-bootstrap/carousel",
+                  bullet: "line"
+                },
+                {
+                  title: "Dropdowns",
+                  page: "react-bootstrap/dropdowns",
+                  bullet: "line"
+                },
+                {
+                  title: "Forms",
+                  page: "react-bootstrap/forms",
+                  bullet: "line"
+                },
+                {
+                  title: "Input Group",
+                  page: "react-bootstrap/input-group",
+                  bullet: "line"
+                },
+                {
+                  title: "Images",
+                  page: "react-bootstrap/images",
+                  bullet: "line"
+                },
+                {
+                  title: "Figures",
+                  page: "react-bootstrap/figures",
+                  bullet: "line"
+                },
+                {
+                  title: "Jumbotron",
+                  page: "react-bootstrap/jumbotron",
+                  bullet: "line"
+                }
+              ]
+            },
+            {
+              items: [
+                {
+                  title: "List group",
+                  page: "react-bootstrap/list-group",
+                  bullet: "dot"
+                },
+                {
+                  title: "Modal",
+                  page: "react-bootstrap/modal",
+                  bullet: "dot"
+                },
+                {
+                  title: "Navs",
+                  page: "react-bootstrap/navs",
+                  bullet: "dot"
+                },
+                {
+                  title: "Navbar",
+                  page: "react-bootstrap/navbar",
+                  bullet: "dot"
+                },
+                {
+                  title: "Overlays",
+                  page: "react-bootstrap/overlays",
+                  bullet: "dot"
+                },
+                {
+                  title: "Pagination",
+                  page: "react-bootstrap/pagination",
+                  bullet: "dot"
+                },
+                {
+                  title: "Popovers",
+                  page: "react-bootstrap/popovers",
+                  bullet: "dot"
+                }
+              ]
+            },
+            {
+              items: [
+                {
+                  title: "Progress",
+                  page: "react-bootstrap/progress"
+                },
+                {
+                  title: "Spinners",
+                  page: "react-bootstrap/spinners"
+                },
+                {
+                  title: "Table",
+                  page: "react-bootstrap/table"
+                },
+                {
+                  title: "Tabs",
+                  page: "react-bootstrap/tabs"
+                },
+                {
+                  title: "Tooltips",
+                  page: "react-bootstrap/tooltips"
+                },
+                {
+                  title: "Toasts",
+                  page: "react-bootstrap/toasts"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
         title: "Dashboards",
         root: true,
         alignment: "left",
         icon: "flaticon-browser",
         page: "dashboard",
         translate: "MENU.DASHBOARD"
+      },
+      {
+        title: "Supervising",
+        root: true,
+        alignment: "left",
+        icon: "flaticon-rotate",
+        page: "supervising",
       },
       {
         title: "Academic",
@@ -329,158 +488,7 @@ export default {
           }
         ]
       },
-      {
-        title: "Bootstrap",
-        root: true,
-        alignment: "left",
-        toggle: "click",
-        page: "react-bootstrap",
-        submenu: {
-          type: "mega",
-          width: "800px",
-          alignment: "left",
-          columns: [
-            {
-              items: [
-                {
-                  title: "Alerts",
-                  page: "react-bootstrap/alert"
-                },
-                {
-                  title: "Accordion",
-                  page: "react-bootstrap/accordion"
-                },
-                {
-                  title: "Badge",
-                  page: "react-bootstrap/badge"
-                },
-                {
-                  title: "Breadcrumb",
-                  page: "react-bootstrap/breadcrumb"
-                },
-                {
-                  title: "Buttons",
-                  page: "react-bootstrap/buttons"
-                },
-                {
-                  title: "Button Group",
-                  page: "react-bootstrap/button-group"
-                },
-                {
-                  title: "Cards",
-                  page: "react-bootstrap/cards"
-                }
-              ]
-            },
-            {
-              items: [
-                {
-                  title: "Carousel",
-                  page: "react-bootstrap/carousel",
-                  bullet: "line"
-                },
-                {
-                  title: "Dropdowns",
-                  page: "react-bootstrap/dropdowns",
-                  bullet: "line"
-                },
-                {
-                  title: "Forms",
-                  page: "react-bootstrap/forms",
-                  bullet: "line"
-                },
-                {
-                  title: "Input Group",
-                  page: "react-bootstrap/input-group",
-                  bullet: "line"
-                },
-                {
-                  title: "Images",
-                  page: "react-bootstrap/images",
-                  bullet: "line"
-                },
-                {
-                  title: "Figures",
-                  page: "react-bootstrap/figures",
-                  bullet: "line"
-                },
-                {
-                  title: "Jumbotron",
-                  page: "react-bootstrap/jumbotron",
-                  bullet: "line"
-                }
-              ]
-            },
-            {
-              items: [
-                {
-                  title: "List group",
-                  page: "react-bootstrap/list-group",
-                  bullet: "dot"
-                },
-                {
-                  title: "Modal",
-                  page: "react-bootstrap/modal",
-                  bullet: "dot"
-                },
-                {
-                  title: "Navs",
-                  page: "react-bootstrap/navs",
-                  bullet: "dot"
-                },
-                {
-                  title: "Navbar",
-                  page: "react-bootstrap/navbar",
-                  bullet: "dot"
-                },
-                {
-                  title: "Overlays",
-                  page: "react-bootstrap/overlays",
-                  bullet: "dot"
-                },
-                {
-                  title: "Pagination",
-                  page: "react-bootstrap/pagination",
-                  bullet: "dot"
-                },
-                {
-                  title: "Popovers",
-                  page: "react-bootstrap/popovers",
-                  bullet: "dot"
-                }
-              ]
-            },
-            {
-              items: [
-                {
-                  title: "Progress",
-                  page: "react-bootstrap/progress"
-                },
-                {
-                  title: "Spinners",
-                  page: "react-bootstrap/spinners"
-                },
-                {
-                  title: "Table",
-                  page: "react-bootstrap/table"
-                },
-                {
-                  title: "Tabs",
-                  page: "react-bootstrap/tabs"
-                },
-                {
-                  title: "Tooltips",
-                  page: "react-bootstrap/tooltips"
-                },
-                {
-                  title: "Toasts",
-                  page: "react-bootstrap/toasts"
-                }
-              ]
-            }
-          ]
-        }
-      },
+     
       {
         title: "Custom",
         root: true,
