@@ -1,5 +1,5 @@
 import axios from "axios";
-import fetch from "node-fetch";
+// import fetch from "node-fetch";
 
 export const LOGIN_URL = "api/auth/login";
 export const REGISTER_URL = "api/auth/register";

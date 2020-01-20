@@ -19,15 +19,15 @@ import RecentActivities from "../../widgets/RecentActivities";
 import PortletHeaderDropdown from "../../partials/content/CustomDropdowns/PortletHeaderDropdown";
 
 export default function Dashboard() {
-  let dashboard_data = {
-        "program_id": "FIK / Desain Komunikasi Visual - S1",
-        "sks": 0,
-        "current_status": "AKTIF",
-        "nim": "A14.2014.01961",
-        "name": "SATRIA WIDYATAMA",
-        "dosen_wali": "Dr. ARIPIN, M.Kom",
-        "ipk": 0.0
-    }
+  // let dashboard_data = {
+  //       "program_id": "FIK / Desain Komunikasi Visual - S1",
+  //       "sks": 0,
+  //       "current_status": "AKTIF",
+  //       "nim": "A14.2014.01961",
+  //       "name": "SATRIA WIDYATAMA",
+  //       "dosen_wali": "Dr. ARIPIN, M.Kom",
+  //       "ipk": 0.0
+  //   }
     
   const { brandColor, dangerColor, successColor, primaryColor } = useSelector(
     state => ({

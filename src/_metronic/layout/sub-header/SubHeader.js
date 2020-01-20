@@ -3,7 +3,6 @@ import React from "react";
 import { connect } from "react-redux";
 import objectPath from "object-path";
 import { withRouter } from "react-router-dom";
-import { QuickActions } from "./components/QuickActions";
 import * as builder from "../../ducks/builder";
 import { LayoutContextConsumer } from "../LayoutContext";
 import BreadCrumbs from "./components/BreadCrumbs";
@@ -15,7 +14,7 @@ class SubHeader extends React.Component {
       subheaderContainerCssClasses,
       subheaderMobileToggle
     } = this.props;
-
+    
     return (
       <div
         id="kt_subheader"
@@ -49,7 +48,7 @@ class SubHeader extends React.Component {
 	            	Reports
 	            </a>
               &nbsp;
-              <QuickActions />
+              {/* <QuickActions /> */}
             </div>
           </div>
         </div>

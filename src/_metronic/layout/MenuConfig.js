@@ -165,9 +165,9 @@ export default {
       {
         title: "Supervising",
         root: true,
-        alignment: "left",
         icon: "flaticon-rotate",
-        page: "supervising",
+        page: "supervising/history",
+        desc: 'Perwalian',
       },
       {
         title: "Academic",
@@ -547,6 +547,25 @@ export default {
         page: "dashboard",
         translate: "MENU.DASHBOARD",
         bullet: "dot"
+      },
+      {
+        title: "Supervising",
+        root: true,
+        icon: "flaticon-rotate",
+        page: "supervising/history",
+        desc: 'Perwalian',
+        submenu: [
+          {
+            title: "History",
+            desc: 'Riwayat Perwalian',
+            page: 'supervising/history',
+          },
+          {
+            title: "Form",
+            desc: 'Form',
+            page: 'supervising/history',
+          },
+        ]
       },
       {
         title: "Layout Builder",

@@ -6,11 +6,15 @@ import DocsPage from "./docs/DocsPage";
 import { LayoutSplashScreen } from "../../../_metronic";
 import MyPage from "./MyPage";
 import Invoice from "./Invoice";
-import Supervising from "./Supervising";
+
+const Supervising = lazy(() =>
+  import("./supervising/Supervising")
+);
 
 const Academic = lazy(() =>
   import("./academic/Academic")
 );
+
 
 const GoogleMaterialPage = lazy(() =>
   import("./google-material/GoogleMaterialPage")
