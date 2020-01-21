@@ -69,6 +69,7 @@ export default function SupervisingCard ({status,id,question,supervising_date,to
           <div className="kt-widget26__content text-center">
             <span className="kt-widget26__number" >{topic}</span>
             <span>{status}</span>
+            <span>{supervising_date}</span>
           </div>
           <div
             className="kt-widget26__item"

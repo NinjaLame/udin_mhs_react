@@ -8,26 +8,63 @@ import {
 } from "../../partials/content/Portlet";
 import { metronic } from "../../../_metronic";
 import QuickStatsChart from "../../widgets/QuickStatsChart";
-import OrderStatisticsChart from "../../widgets/OrderStatisticsChart";
+import AcademicStatistic from "../../widgets/AcademicStatistic";
 import OrdersWidget from "../../widgets/OrdersWidget";
 import SalesBarChart from "../../widgets/SalesBarChart";
 import DownloadFiles from "../../widgets/DownloadFiles";
 import NewUsers from "../../widgets/NewUsers";
 import LatestUpdates from "../../widgets/LatestUpdates";
 import BestSellers from "../../widgets/BestSellers";
-import RecentActivities from "../../widgets/RecentActivities";
+import TodaySchedule from "../../widgets/TodaySchedule";
 import PortletHeaderDropdown from "../../partials/content/CustomDropdowns/PortletHeaderDropdown";
 
 export default function Dashboard() {
-  // let dashboard_data = {
-  //       "program_id": "FIK / Desain Komunikasi Visual - S1",
-  //       "sks": 0,
-  //       "current_status": "AKTIF",
-  //       "nim": "A14.2014.01961",
-  //       "name": "SATRIA WIDYATAMA",
-  //       "dosen_wali": "Dr. ARIPIN, M.Kom",
-  //       "ipk": 0.0
-  //   }
+  let dashboard_data = {
+        "program_id": "FIK / Desain Komunikasi Visual - S1",
+        "sks": 144,
+        "current_status": "AKTIF",
+        "nim": "A14.2014.01961",
+        "name": "SATRIA WIDYATAMA",
+        "dosen_wali": "Dr. ARIPIN, M.Kom",
+        "ipk": 3.5
+    }
+
+  let today_schedule = [
+      {
+          "kode": "A14.27103",
+          "room": "D.5.Gambar",
+          "hour_start": "16:20",
+          "lecturer": " BERNARDUS ANDANG PRASETYA ADIWIBAWA, ST, M.Si",
+          "hour_end": "18:00",
+          "credit": 2,
+          "kelompok": "A14.7108",
+          "name": "GAMBAR TEKNIK",
+          "schedule_type": "P"
+      },
+      {
+        "kode": "A14.27103",
+        "room": "D.5.Gambar",
+        "hour_start": "16:20",
+        "lecturer": " BERNARDUS ANDANG PRASETYA ADIWIBAWA, ST, M.Si",
+        "hour_end": "18:00",
+        "credit": 2,
+        "kelompok": "A14.7108",
+        "name": "GAMBAR TEKNIK",
+        "schedule_type": "P"
+      },
+      {
+        "kode": "A14.27103",
+        "room": "D.5.Gambar",
+        "hour_start": "16:20",
+        "lecturer": " BERNARDUS ANDANG PRASETYA ADIWIBAWA, ST, M.Si",
+        "hour_end": "18:00",
+        "credit": 2,
+        "kelompok": "A14.7108",
+        "name": "GAMBAR TEKNIK",
+        "schedule_type": "P"
+    }
+
+    ]
     
   const { brandColor, dangerColor, successColor, primaryColor } = useSelector(
     state => ({
@@ -50,38 +87,32 @@ export default function Dashboard() {
     })
   );
 
-  const chartOptions = useMemo(
-    () => ({
-      chart1: {
-        data: [10, 14, 18, 11, 9, 12, 14, 17, 18, 14],
-        color: brandColor,
-        border: 3
-      },
-
-      chart2: {
-        data: [11, 12, 18, 13, 11, 12, 15, 13, 19, 15],
-        color: dangerColor,
-        border: 3
-      },
-
-      chart3: {
-        data: [12, 12, 18, 11, 15, 12, 13, 16, 11, 18],
-        color: successColor,
-        border: 3
-      },
-
-      chart4: {
-        data: [11, 9, 13, 18, 13, 15, 14, 13, 18, 15],
-        color: primaryColor,
-        border: 3
-      }
-    }),
-    [brandColor, dangerColor, primaryColor, successColor]
-  );
 
   return (
     <>
-      <div className="row">
+     <div className="row">
+        
+        <div className="col-xl-4">
+          <TodaySchedule schedule={today_schedule}/>
+        </div>
+        <div className="col-xl-8">
+          <Portlet fluidHeight={true}>
+            <PortletHeader
+              title="Order Statistics"
+              toolbar={
+                <PortletHeaderToolbar>
+                  <PortletHeaderDropdown />
+                </PortletHeaderToolbar>
+              }
+            />
+
+            <PortletBody>
+              <AcademicStatistic {...dashboard_data}/>
+            </PortletBody>
+          </Portlet>
+        </div>
+      </div>
+      {/* <div className="row">
         <div className="col-xl-6">
           <div className="row row-full-height">
             <div className="col-sm-12 col-md-12 col-lg-6">
@@ -142,24 +173,9 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <div className="col-xl-6">
-          <Portlet fluidHeight={true}>
-            <PortletHeader
-              title="Order Statistics"
-              toolbar={
-                <PortletHeaderToolbar>
-                  <PortletHeaderDropdown />
-                </PortletHeaderToolbar>
-              }
-            />
-
-            <PortletBody>
-              <OrderStatisticsChart />
-            </PortletBody>
-          </Portlet>
-        </div>
-      </div>
-
+       
+      </div> */}
+{/* 
       <Portlet>
         <PortletBody fit={true}>
           <div className="row row-no-padding row-col-separator-xl">
@@ -180,8 +196,8 @@ export default function Dashboard() {
             </div>
           </div>
         </PortletBody>
-      </Portlet>
-
+      </Portlet> */}
+{/* 
       <div className="row">
         <div className="col-xl-4">
           <DownloadFiles />
@@ -192,7 +208,7 @@ export default function Dashboard() {
         <div className="col-xl-4">
           <LatestUpdates />
         </div>
-      </div>
+      </div> */}
 
       {/* <div className="row">
         <div className="col-xl-8"></div>
@@ -201,14 +217,7 @@ export default function Dashboard() {
         </div>
       </div> */}
 
-      <div className="row">
-        <div className="col-xl-8">
-          <BestSellers />
-        </div>
-        <div className="col-xl-4">
-          <RecentActivities />
-        </div>
-      </div>
+     
     </>
   );
 }
