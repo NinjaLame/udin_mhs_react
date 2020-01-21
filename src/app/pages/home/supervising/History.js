@@ -48,10 +48,10 @@ export default function History() {
         {
             "status": "pending",
             "id": 12,
-            "question": "<p>tanya apa baru lagi</p>",
+            "question": "<h1>tanya apa baru lagi</h1>",
             "supervising_date": "2019-11-27",
-            "topic": "perwalian baru lagi",
-            "answer": false,
+            "topic": "Apa ini",
+            "answer": "Jian suan",
             "lecturer_id": " PRAJANTO WAHYU ADI, M.Kom"
         },
         {

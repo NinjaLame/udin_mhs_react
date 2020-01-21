@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { Button, Form, InputGroup, Col } from "react-bootstrap";
 import { makeStyles } from '@material-ui/core/styles';
-
+import Fab from '@material-ui/core/Fab';
 import { Editor } from '@tinymce/tinymce-react';
 // import {Editor, EditorState} from 'draft-js';
 const useStyles = makeStyles(theme => ({
+    fab: {
+        margin: theme.spacing(1),
+    },
     paper: {
         // position: "absolute",
         width: '100%',
