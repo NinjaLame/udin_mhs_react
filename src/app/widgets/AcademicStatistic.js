@@ -4,8 +4,8 @@ import { useSelector } from "react-redux";
 import { metronic } from "../../_metronic";
 
 export default function OrderStatisticsChart({
-  program_id,sks,current_status,nim,
-  name,dosen_wali,ipk
+  program_id, sks, current_status, nim,
+  name, dosen_wali, ipk, krs
 }) {
   const ref = useRef();
   const { brandColor, shape2Color, shape3Color } = useSelector(state => ({
@@ -23,9 +23,12 @@ export default function OrderStatisticsChart({
     )
   }));
 
+  let labels = Array.apply(1, {length: krs.length}).map(Number.call, Number)
+  let datas = krs.map(e=>e.semester_gpa)
+
   const data = useMemo(
     () => ({
-      labels: ["1 Jan", "2 Jan", "3 Jan", "4 Jan", "5 Jan", "6 Jan", "7 Jan"],
+      labels: labels,
       datasets: [
         {
           fill: true,
@@ -56,38 +59,8 @@ export default function OrderStatisticsChart({
             .alpha(0.1)
             .rgbString(),
 
-          data: [20, 40, 50, 25, 35, 60, 30]
+          data: datas
         },
-        {
-          fill: true,
-          // borderWidth: 0,
-          backgroundColor: Chart.helpers
-            .color(brandColor)
-            .alpha(0.2)
-            .rgbString(),
-          borderColor: Chart.helpers
-            .color(brandColor)
-            .alpha(0)
-            .rgbString(),
-
-          pointHoverRadius: 4,
-          pointHoverBorderWidth: 12,
-          pointBackgroundColor: Chart.helpers
-            .color("#000000")
-            .alpha(0)
-            .rgbString(),
-          pointBorderColor: Chart.helpers
-            .color("#000000")
-            .alpha(0)
-            .rgbString(),
-          pointHoverBackgroundColor: brandColor,
-          pointHoverBorderColor: Chart.helpers
-            .color("#000000")
-            .alpha(0.1)
-            .rgbString(),
-
-          data: [25, 45, 55, 30, 40, 65, 35]
-        }
       ]
     }),
     [brandColor]
@@ -144,8 +117,8 @@ export default function OrderStatisticsChart({
                 zeroLineBorderDash: [3, 4]
               },
               ticks: {
-                max: 70,
-                stepSize: 10,
+                max: 4,
+                stepSize: 1,
                 display: true,
                 beginAtZero: true,
                 fontColor: shape3Color,
@@ -199,31 +172,31 @@ export default function OrderStatisticsChart({
           <div className="kt-widget12__info">
             <span className="kt-widget12__desc">Dosen Wali</span>
             <span className="kt-widget12__value">{dosen_wali}</span>
-          <div className="kt-widget12__info">
-            <span className="kt-widget12__desc">SKS Tempuh</span>
-            <span className="kt-widget12__value">{sks}</span>
+            <div className="kt-widget12__info">
+              <span className="kt-widget12__desc">SKS Tempuh</span>
+              <span className="kt-widget12__value">{sks}</span>
+            </div>
           </div>
-        </div>
-        <div className="kt-widget12__item">
           <div className="kt-widget12__info">
-            <span className="kt-widget12__desc">Program Studi</span>
-            <span className="kt-widget12__value">{program_id}</span>
-          <div className="kt-widget12__info">
-            <span className="kt-widget12__desc">IPK</span>
-            <span className="kt-widget12__value">{ipk}</span>
-          </div>
-          </div>
+            <div className="kt-widget12__info">
+              <span className="kt-widget12__desc">NIM</span>
+              <span className="kt-widget12__value">{nim}</span>
+              <div className="kt-widget12__info">
+                <span className="kt-widget12__desc">IPK</span>
+                <span className="kt-widget12__value">{ipk}</span>
+              </div>
+            </div>
 
+          </div>
         </div>
-      </div>
-      <div className="kt-widget12__chart" style={{ height: "250px" }}>
-        <canvas
-          ref={ref}
-          width={683}
-          height={312}
-          id="kt_chart_order_statistics"
-        />
-      </div>
+        <div className="kt-widget12__chart" style={{ height: "250px" }}>
+          <canvas
+            ref={ref}
+            width={683}
+            height={312}
+            id="kt_chart_order_statistics"
+          />
+        </div>
       </div>
     </div>
   );

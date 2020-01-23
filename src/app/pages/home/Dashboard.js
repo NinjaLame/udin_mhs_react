@@ -1,4 +1,5 @@
-import React, { useMemo } from "react";
+import React, { useMemo } from "reactn";
+import { setGlobal, useGlobal} from 'reactn'; 
 import { useSelector } from "react-redux";
 import {
   Portlet,
@@ -19,6 +20,67 @@ import TodaySchedule from "../../widgets/TodaySchedule";
 import PortletHeaderDropdown from "../../partials/content/CustomDropdowns/PortletHeaderDropdown";
 
 export default function Dashboard() {
+
+  let studyplan = [
+    {
+        "batch_code": "2017/2018 genap",
+        "semester_gpa": 3.5,
+        "id": 5304,
+        "credit_sum": 0,
+        "current_gpa": 0.0
+    },
+    {
+        "batch_code": "2017/2018 ganjil",
+        "semester_gpa": 3.6,
+        "id": 28599,
+        "credit_sum": 0,
+        "current_gpa": 0.0
+    },
+    {
+        "batch_code": "2016/2017 genap",
+        "semester_gpa": 3.4,
+        "id": 11214,
+        "credit_sum": 0,
+        "current_gpa": 0.0
+    },
+    {
+        "batch_code": "2016/2017 ganjil",
+        "semester_gpa": 3.7,
+        "id": 19145,
+        "credit_sum": 0,
+        "current_gpa": 0.0
+    },
+    {
+        "batch_code": "2015/2016 genap",
+        "semester_gpa": 3.2,
+        "id": 58389,
+        "credit_sum": 0,
+        "current_gpa": 0.0
+    },
+    {
+        "batch_code": "2014/2015 genap",
+        "semester_gpa": 2,
+        "id": 108995,
+        "credit_sum": 0,
+        "current_gpa": 0.0
+    },
+    {
+        "batch_code": "2014/2015 ganjil",
+        "semester_gpa": 3.6,
+        "id": 111308,
+        "credit_sum": 0,
+        "current_gpa": 0.0
+    },
+    {
+        "batch_code": "2018/2019 ganjil",
+        "semester_gpa": 4,
+        "id": 46668,
+        "credit_sum": 0,
+        "current_gpa": 0.0
+    }
+]
+  
+
   let dashboard_data = {
         "program_id": "FIK / Desain Komunikasi Visual - S1",
         "sks": 144,
@@ -66,26 +128,26 @@ export default function Dashboard() {
 
     ]
     
-  const { brandColor, dangerColor, successColor, primaryColor } = useSelector(
-    state => ({
-      brandColor: metronic.builder.selectors.getConfig(
-        state,
-        "colors.state.brand"
-      ),
-      dangerColor: metronic.builder.selectors.getConfig(
-        state,
-        "colors.state.danger"
-      ),
-      successColor: metronic.builder.selectors.getConfig(
-        state,
-        "colors.state.success"
-      ),
-      primaryColor: metronic.builder.selectors.getConfig(
-        state,
-        "colors.state.primary"
-      )
-    })
-  );
+  // const { brandColor, dangerColor, successColor, primaryColor } = useSelector(
+  //   state => ({
+  //     brandColor: metronic.builder.selectors.getConfig(
+  //       state,
+  //       "colors.state.brand"
+  //     ),
+  //     dangerColor: metronic.builder.selectors.getConfig(
+  //       state,
+  //       "colors.state.danger"
+  //     ),
+  //     successColor: metronic.builder.selectors.getConfig(
+  //       state,
+  //       "colors.state.success"
+  //     ),
+  //     primaryColor: metronic.builder.selectors.getConfig(
+  //       state,
+  //       "colors.state.primary"
+  //     )
+  //   })
+  // );
 
 
   return (
@@ -107,7 +169,7 @@ export default function Dashboard() {
             />
 
             <PortletBody>
-              <AcademicStatistic {...dashboard_data}/>
+              <AcademicStatistic {...dashboard_data} krs={studyplan}/>
             </PortletBody>
           </Portlet>
         </div>
