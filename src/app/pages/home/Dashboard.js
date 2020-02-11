@@ -1,5 +1,4 @@
-import React, { useMemo } from "reactn";
-import { setGlobal, useGlobal} from 'reactn'; 
+import React, { useState } from 'react';
 import { useSelector } from "react-redux";
 import {
   Portlet,
@@ -7,20 +6,16 @@ import {
   PortletHeader,
   PortletHeaderToolbar
 } from "../../partials/content/Portlet";
-import { metronic } from "../../../_metronic";
-import QuickStatsChart from "../../widgets/QuickStatsChart";
 import AcademicStatistic from "../../widgets/AcademicStatistic";
-import OrdersWidget from "../../widgets/OrdersWidget";
-import SalesBarChart from "../../widgets/SalesBarChart";
-import DownloadFiles from "../../widgets/DownloadFiles";
-import NewUsers from "../../widgets/NewUsers";
-import LatestUpdates from "../../widgets/LatestUpdates";
-import BestSellers from "../../widgets/BestSellers";
 import TodaySchedule from "../../widgets/TodaySchedule";
 import PortletHeaderDropdown from "../../partials/content/CustomDropdowns/PortletHeaderDropdown";
 
 export default function Dashboard() {
 
+  const auth = useSelector(state => state.auth)
+  
+  const [a, setCurInvoice] = React.useState(0)
+  
   let studyplan = [
     {
         "batch_code": "2017/2018 genap",

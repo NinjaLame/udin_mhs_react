@@ -80,7 +80,7 @@ export default function InvoiceCard(invoice) {
         <PortletBody fluid={true}>
           <div className="kt-widget26">
             <div className="kt-widget26__content">
-              <span className="kt-widget26__number" >{period_id[1]}</span>
+              <span className="kt-widget26__number" >{invoice.name}</span>
               {status}
             </div>
 

@@ -14,17 +14,18 @@ export const actionTypes = {
 
 const initialAuthState = {
   user: undefined,
-  authToken: undefined
+  authToken: undefined,
+  refreshToken: undefined
 };
 
 export const reducer = persistReducer(
-    { storage, key: "demo4-auth", whitelist: ["user", "authToken"] },
+    { storage, key: "demo4-auth", whitelist: ["user", "authToken", "refreshToken"] },
     (state = initialAuthState, action) => {
       switch (action.type) {
         case actionTypes.Login: {
-          const { authToken } = action.payload;
+          const { authToken, refreshToken } = action.payload;
 
-          return { authToken, user: undefined };
+          return { authToken, refreshToken, user: undefined };
         }
 
         case actionTypes.Register: {
@@ -51,7 +52,7 @@ export const reducer = persistReducer(
 );
 
 export const actions = {
-  login: authToken => ({ type: actionTypes.Login, payload: { authToken } }),
+  login: (authToken, refreshToken) => ({ type: actionTypes.Login, payload: { authToken, refreshToken} }),
   register: authToken => ({
     type: actionTypes.Register,
     payload: { authToken }

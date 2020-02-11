@@ -31,8 +31,10 @@ function Login(props) {
       login(values.email, values.password)
         .then((data) => {
           disableLoading();
-            props.login(data.access_token || data.data.accessToken );
-            console.log(data.access_token || data.data.accessToken);
+          props.login(data.data.accessToken, data.data.refreshToken );
+
+            // props.login(data.access_token || data.data.accessToken );
+            // console.log(data.access_token || data.data.accessToken);
             
         })
         .catch(() => {
@@ -82,7 +84,7 @@ function Login(props) {
                   id: "AUTH.VALIDATION.REQUIRED_FIELD"
                 });
               } else if (
-                !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+                !/^[a-zA-Z0-9\.]+$/.test(values.email)
               ) {
                 errors.email = intl.formatMessage({
                   id: "AUTH.VALIDATION.INVALID_FIELD"

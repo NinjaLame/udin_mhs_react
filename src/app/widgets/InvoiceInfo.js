@@ -12,7 +12,7 @@ const toCurrency = (num) => {
     let currency = 'Rp. '+ num.toLocaleString('id-ID')
     return currency;
   } catch (error) {
-    return 'Rp. -'
+    return 'Rp. 0'
   }
 }
 
@@ -129,7 +129,7 @@ export default function InvoiceInfo(prop) {
   }
   return (
       <div className={prop.rootcls ? prop.rootcls: ''}>
-        <span>Periode {invoice.period_id[1]} {status}</span>
+        <span>Periode {invoice.name} {status}</span>
             <div className="row">
               <div className="col-12">
                 <Current {...invoice}/>
