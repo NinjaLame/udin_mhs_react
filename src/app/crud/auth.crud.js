@@ -1,26 +1,15 @@
 import axios from "axios";
 // import fetch from "node-fetch";
 
-export const LOGIN_URL = "http://127.0.0.1:5000/auth";
+export const LOGIN_URL = process.env.API_URL+"/auth";
 export const REGISTER_URL = "api/auth/register";
 export const REQUEST_PASSWORD_URL = "api/auth/forgot-password";
 
 
 
-export const ME_URL = "http://127.0.0.1:5000/student";
+export const ME_URL = process.env.API_URL+"/student";
 
 export async function login(email, password) {
-  // let response = await fetch("http://127.0.0.1:5000/auth", {
-  //   mode : 'cors',
-  //   header: {
-  //       'Access-Control-Allow-Credentials': '*' ,
-  //       'Access-Control-Allow-Methods': "*",
-  //       'Access-Control-Allow-Origin': '*',
-  //       'Access-Control-Allow-Headers': {'Access-Control-Allow-Methods': "*"},
-  //     }
-  //   });
-  // let data = await response.json();
-  // return data;
 
   var fd = new FormData()
   fd.append('username',email);

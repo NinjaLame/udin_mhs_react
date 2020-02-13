@@ -24,7 +24,8 @@ export default function OrderStatisticsChart({
   }));
 
   let labels = Array.apply(1, {length: krs.length}).map(Number.call, Number)
-  let datas = krs.map(e=>e.semester_gpa)
+  labels = [...labels.map(e=>('SMT '+ (e+1)))]
+  let datas = [...krs.map(e=>e.semester_gpa)]
 
   const data = useMemo(
     () => ({
@@ -70,99 +71,100 @@ export default function OrderStatisticsChart({
     // For more information about the chartjs, visit this link
     // https://www.chartjs.org/docs/latest/getting-started/usage.html
 
-    const chart = new Chart(ref.current, {
-      data,
-      type: "line",
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        legend: false,
-        scales: {
-          xAxes: [
-            {
-              categoryPercentage: 0.35,
-              barPercentage: 0.7,
-              display: true,
-              scaleLabel: {
-                display: false,
-                labelString: "Month"
-              },
-              gridLines: false,
-              ticks: {
+      const chart = new Chart(ref.current, {
+        data,
+        type: "line",
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          legend: false,
+          scales: {
+            xAxes: [
+              {
+                categoryPercentage: 0.35,
+                barPercentage: 0.7,
                 display: true,
-                beginAtZero: true,
-                fontColor: shape3Color,
-                fontSize: 13,
-                padding: 10
+                scaleLabel: {
+                  display: false,
+                  labelString: "Month"
+                },
+                gridLines: false,
+                ticks: {
+                  display: true,
+                  beginAtZero: true,
+                  fontColor: shape3Color,
+                  fontSize: 13,
+                  padding: 10
+                }
               }
-            }
-          ],
-          yAxes: [
-            {
-              categoryPercentage: 0.35,
-              barPercentage: 0.7,
-              display: true,
-              scaleLabel: {
-                display: false,
-                labelString: "Value"
-              },
-              gridLines: {
-                color: shape2Color,
-                drawBorder: false,
-                offsetGridLines: false,
-                drawTicks: false,
-                borderDash: [3, 4],
-                zeroLineWidth: 1,
-                zeroLineColor: shape2Color,
-                zeroLineBorderDash: [3, 4]
-              },
-              ticks: {
-                max: 4,
-                stepSize: 1,
+            ],
+            yAxes: [
+              {
+                categoryPercentage: 0.35,
+                barPercentage: 0.7,
                 display: true,
-                beginAtZero: true,
-                fontColor: shape3Color,
-                fontSize: 13,
-                padding: 10
+                scaleLabel: {
+                  display: false,
+                  labelString: "Value"
+                },
+                gridLines: {
+                  color: shape2Color,
+                  drawBorder: false,
+                  offsetGridLines: false,
+                  drawTicks: false,
+                  borderDash: [3, 4],
+                  zeroLineWidth: 1,
+                  zeroLineColor: shape2Color,
+                  zeroLineBorderDash: [3, 4]
+                },
+                ticks: {
+                  max: 4,
+                  stepSize: 1,
+                  display: true,
+                  beginAtZero: true,
+                  fontColor: shape3Color,
+                  fontSize: 13,
+                  padding: 10
+                }
               }
+            ]
+          },
+          title: {
+            display: false
+          },
+          hover: {
+            mode: "ErrorsPage.js"
+          },
+          tooltips: {
+            enabled: true,
+            intersect: false,
+            mode: "nearest",
+            bodySpacing: 5,
+            yPadding: 10,
+            xPadding: 10,
+            caretPadding: 0,
+            displayColors: false,
+            backgroundColor: brandColor,
+            titleFontColor: "#ffffff",
+            cornerRadius: 4,
+            footerSpacing: 0,
+            titleSpacing: 0
+          },
+          layout: {
+            padding: {
+              left: 0,
+              right: 0,
+              top: 5,
+              bottom: 5
             }
-          ]
-        },
-        title: {
-          display: false
-        },
-        hover: {
-          mode: "ErrorsPage.js"
-        },
-        tooltips: {
-          enabled: true,
-          intersect: false,
-          mode: "nearest",
-          bodySpacing: 5,
-          yPadding: 10,
-          xPadding: 10,
-          caretPadding: 0,
-          displayColors: false,
-          backgroundColor: brandColor,
-          titleFontColor: "#ffffff",
-          cornerRadius: 4,
-          footerSpacing: 0,
-          titleSpacing: 0
-        },
-        layout: {
-          padding: {
-            left: 0,
-            right: 0,
-            top: 5,
-            bottom: 5
           }
         }
-      }
-    });
-
-    return () => {
-      chart.destroy();
-    };
+      });
+  
+      return () => {
+        chart.destroy();
+      };
+    
   }, [data, brandColor, shape2Color, shape3Color]);
 
   return (

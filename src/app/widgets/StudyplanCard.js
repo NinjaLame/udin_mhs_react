@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function StudyplanCard(studyplan) {
-  let {batch_code, credit_sum, semester_gpa} = studyplan;
+  let {batch_code, credit_sum, semester_gpa, krs_item} = studyplan;
 
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
@@ -62,7 +62,7 @@ export default function StudyplanCard(studyplan) {
               
             >
               <div style={modalStyle} className={classes.paper}>
-                <StudyplanInfo id={studyplan.id} />
+                <StudyplanInfo id={studyplan.id} item={krs_item} />
               </div>
             </Modal>
 

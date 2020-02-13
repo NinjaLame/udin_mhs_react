@@ -31,7 +31,7 @@ function Login(props) {
       login(values.email, values.password)
         .then((data) => {
           disableLoading();
-          props.login(data.data.accessToken, data.data.refreshToken );
+          props.login(data.data.accessToken, data.data.refreshToken, data.data.lecturer );
 
             // props.login(data.access_token || data.data.accessToken );
             // console.log(data.access_token || data.data.accessToken);
