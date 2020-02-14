@@ -52,12 +52,11 @@ export default function Dashboard() {
     };
     update();
   }, []);
-  
+
 
   return (
     <>
       <div className="row">
-
         <div className="col-xl-4">
           <TodaySchedule schedule={today_schedule} />
         </div>
@@ -78,7 +77,7 @@ export default function Dashboard() {
           </Portlet>
         </div>
       </div>
-      
+
 
     </>
   );

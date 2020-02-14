@@ -1,7 +1,7 @@
 import axios from "axios";
 // import fetch from "node-fetch";
 
-export const SUPERVISING = process.env.API_URL+"/student/supervising";
+export const SUPERVISING = process.env.REACT_APP_API_URL+"/student/supervising";
 
 export async function supervisingHistory() {
   return axios.get(SUPERVISING);

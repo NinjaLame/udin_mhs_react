@@ -10,7 +10,7 @@ import Notice from "../../partials/content/Notice";
 import { curInvoice, invoiceHistory } from "../../crud/invoice.crud";
 
 export default function Invoice() {
-  
+
   const [cur_invoice, setCurInvoice] = React.useState({
     "total": 0,
     "prev_gedung": 0,

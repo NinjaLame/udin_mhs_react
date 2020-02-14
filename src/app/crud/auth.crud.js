@@ -1,19 +1,19 @@
 import axios from "axios";
 // import fetch from "node-fetch";
 
-export const LOGIN_URL = process.env.API_URL+"/auth";
+export const LOGIN_URL = process.env.REACT_APP_API_URL + "/auth";
 export const REGISTER_URL = "api/auth/register";
 export const REQUEST_PASSWORD_URL = "api/auth/forgot-password";
 
 
 
-export const ME_URL = process.env.API_URL+"/student";
+export const ME_URL = process.env.REACT_APP_API_URL + "/student";
 
 export async function login(email, password) {
-
+  console.log(process.env.REACT_APP_API_URL)
   var fd = new FormData()
-  fd.append('username',email);
-  fd.append('password',password)
+  fd.append('username', email);
+  fd.append('password', password)
   return axios.post(LOGIN_URL, fd);
 }
 

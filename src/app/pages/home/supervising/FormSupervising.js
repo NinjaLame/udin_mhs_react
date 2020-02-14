@@ -58,7 +58,7 @@ export default function FormSupervising() {
       "supervising_date": date
     }
     supervisingPost(data).then((data)=>{
-      window.location.href = process.env.PUBLIC_URL+'/supervising';
+      window.location.href = process.env.REACT_APP_PUBLIC_URL+'/supervising';
     })
   }
   
