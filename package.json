@@ -2,7 +2,7 @@
   "name": "demo4",
   "version": "6.1.5",
   "private": true,
-  "homepage": "https://keenthemes.com/metronic/preview/react/demo4",
+  "homepage": "http://odemo.dinus.org:5000/react/",
   "scripts": {
     "serve": "cp-cli build ./ && serve",
     "start": "react-scripts start",
